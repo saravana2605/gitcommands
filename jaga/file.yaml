@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# EC2 instance ID ah inga kudunga
+INSTANCE_ID="i-xxxxxxxxxxxxxxxxx"
+
+# Enna panna vendum nu user kitta kekkalam
+echo "Choose option:"
+echo "1. Start EC2 instance"
+echo "2. Stop EC2 instance"
+read -p "Enter your choice (1 or 2): " choice
+
+if [ "$choice" -eq 1 ]; then
+    echo "Starting instance $INSTANCE_ID..."
+    aws ec2 start-instances --instance-ids $INSTANCE_ID
+    echo "Instance started."
+elif [ "$choice" -eq 2 ]; then
+    echo "Stopping instance $INSTANCE_ID..."
+    aws ec2 stop-instances --instance-ids $INSTANCE_ID
+    echo "Instance stopped."
+else
+    echo "Invalid choice!"
+fi
