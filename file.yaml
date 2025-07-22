@@ -7,6 +7,7 @@ INSTANCE_ID="i-xxxxxxxxxxxxxxxxx"
 echo "Choose option:"
 echo "1. Start EC2 instance"
 echo "2. Stop EC2 instance"
+echo "3. Stop EC2 instance"
 read -p "Enter your choice (1 or 2): " choice
 
 if [ "$choice" -eq 1 ]; then
